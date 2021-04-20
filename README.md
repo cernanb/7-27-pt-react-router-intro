@@ -22,10 +22,37 @@ window.history.pushState({}, null, 'something')
 
 ### Components
 
-Router
-Route
+BrowserRouter - Will use this 1 place in our application (and one place only)...at the very top level...and it listens for any route changes in the browser, and makes those changes accessible to any of it's children.
+
+```
+<BrowserRouter>
+    <App>
+</BrowserRouter>
+```
+
 Link
+Changes the URL we see in the browser. It must have a to prop
+
+```
+<Link to="/about">About</Link>
+```
+
+Route
+Conditionally renders a component based on the route
+
+```
+<Route path="/" component={About} />
+```
+
 Switch
-Redirect
+Wraps your Route components. Renders the first component that matches the browser route.
+
+```
+<Switch>
+    <Route />
+    <Route />
+    <Route />
+</Switch>
+```
 
 #### Programmatically switching routes
